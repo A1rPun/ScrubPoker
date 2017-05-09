@@ -1,0 +1,22 @@
+body {
+    background: #000000;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.mdl-layout__header {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.mdl-card {
+    width: 100%;
+    height: 256px;
+    line-height: 256px;
+    text-align: center;
+    font-size: 3em;
+    background: #4cff00;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+}
