@@ -2,17 +2,20 @@
 
 ## Features
 
-    ⨉ Menu
-    ⨉ Singleplayer
-      ✓ Singleplayer UI
-      ⨉ Choose card
-      ✓ Different decks
-      ⨉ Choose deck
-      ⨉ Custom deck
+    ✓ Singleplayer UI
+      ✓ Choose card
+	  ✓ Wait
+	  ✓ Show card
+	✓ Menu
+    ✓ Different decks
+    ✓ Choose deck
+	  ⨉ Show current deck in menu
+	⨉ Cool card colors
+	⨉ Slick themes
+    ⨉ Custom deck
     ⨉ Multiplayer
       ⨉ Server
       ⨉ Front-end connection to server
       ⨉ Algorithms: average card, ???
-      ⨉ Multiplayer UI 
-    ⨉ Easter egg
-    ⨉ ???
+      ⨉ Multiplayer UI
+    ✓ Easter egg

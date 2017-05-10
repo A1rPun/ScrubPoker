@@ -1,6 +1,14 @@
 var scrubPoker = new Vue({
     el: '#ScrubPoker',
+    created: function () {
+        this.setDeck(this.decks[0].deck);
+        this.state = this.gameState.choose;
+    },
     data: {
+        egg: 0,
+        eggValue: '&#129370;&#129370;&#129370;',
+        currentCard: 0,
+        currentDeck: [],
         decks: [{
             name: 'Standard',
             deck: [0, '½', 1, 2, 3, 5, 8, 13, 20, 40, 100]
@@ -13,23 +21,36 @@ var scrubPoker = new Vue({
         }, {
             name: 'T-Shirt',
             deck: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL']
-        }, {
-            name: 'Misc',
-            deck: ['?', '&#8734;', '&#9749;']
         }],
-        currentDeck: [],
+        gameState: {
+            choose: 0,
+            hide: 1,
+            card: 2,
+        },
+        magicValue: 12,
+        miscDeck: ['?', '&#8734;', '&#9749;'],
+        state: 0,
     },
     methods: {
-        cardClick: function (event) { },
+        cardClick: function (event, card) {
+            this.state = this.gameState.hide;
+            this.currentCard = card;
+            event.stopPropagation();
+        },
+        chosenCardClick: function (event) {
+            this.state = this.gameState.choose;
+            this.currentCard = 0;
+        },
         deckClick: function (event, deck) {
             this.setDeck(deck.deck);
         },
         setDeck: function (deck) {
-            var deck2 = this.decks[this.decks.length - 1].deck.slice();
-            this.currentDeck = deck.slice().concat(deck2);
+            this.currentDeck = deck;
         },
+        tableClick: function () {
+            if (this.state === this.gameState.hide) {
+                this.state = this.gameState.card;
+            } else this.egg++;
+        }
     },
-    created: function () {
-        this.setDeck(this.decks[0].deck);
-    }
 });

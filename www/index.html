@@ -11,7 +11,7 @@
     <title>ScrubPoker</title>
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="ScrubPoker">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="ScrubPoker" v-on:click="tableClick($event)">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <span class="mdl-layout-title">Scrum Poker</span>
@@ -21,24 +21,40 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Scrum Poker</span>
             <nav class="mdl-navigation">
-                <div v-for="deck in decks.slice(0, 4)">
-                    <a href="#" class="mdl-navigation__link" v-on:click="deckClick($event, deck)">{{ deck.name }}</a>
+                <div v-for="deck in decks">
+                    <a href="#" class="mdl-navigation__link"
+                       v-on:click="deckClick($event, deck)">{{ deck.name }}</a>
                 </div>
+                <a href="#" class="mdl-navigation__link">Multiplayer</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--4-col" v-for="deck in currentDeck">
-                        <div class="mdl-card mdl-shadow--2dp" v-html="deck" v-on:click="cardClick($event)"></div>
+                <div class="mdl-grid"
+                     v-if="state === gameState.choose">
+                    <div class="mdl-cell mdl-cell--4-col"
+                         v-for="card in currentDeck">
+                        <div class="mdl-card mdl-shadow--2dp"
+                             v-html="card"
+                             v-on:click="cardClick($event, card)"></div>
                     </div>
+                    <div class="mdl-cell mdl-cell--4-col"
+                         v-for="card in miscDeck">
+                        <div class="mdl-card mdl-shadow--2dp"
+                             v-html="card"
+                             v-on:click="cardClick($event, card)"></div>
+                    </div>                                                                                                                              <div class="mdl-cell mdl-cell--4-col" v-if="egg > magicValue"><div class="mdl-card mdl-shadow--2dp" v-html="eggValue" v-on:click="cardClick($event, eggValue)"></div></div>
                 </div>
+                <div class="mdl-card mdl-card__fullscreen"
+                     v-if="state === gameState.card"
+                     v-html="currentCard"
+                     v-on:click="chosenCardClick()"></div>
             </div>
         </main>
     </div>
     <script src="cordova.js"></script>
     <script src="js/material.min.js"></script>
     <script src="js/vue.min.js"></script>
-    <script src="js/index.js"></script>&#9712;
+    <script src="js/index.js"></script>
 </body>
 </html>

@@ -20,3 +20,13 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.mdl-card__fullscreen {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    height: auto;
+    width: auto;
+}
