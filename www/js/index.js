@@ -4,7 +4,7 @@ var decks = {
     fibonacci: [0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89],
     natural: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     tshirt: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    misc: ['Unknown?', 'Infinite', 'Coffee']
+    misc: ['?', '&#8734;', '&#9749;']
 };
 var app = {
     initialize: function() {
@@ -21,7 +21,7 @@ var app = {
             zz.innerHTML = template;
             zz.querySelector('.mdl-card').innerHTML = cards[i];
             zz.addEventListener('click', this.cardClick);
-            cc.appendChild(zz);
+            cc.appendChild(zz.firstElementChild);
         }
     },
     cardClick: function () {
