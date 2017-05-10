@@ -31,9 +31,7 @@ var app = {
         this.style.right = 0;
         this.style.bottom = 0;
     },
-    onDeviceReady: function () {
-
-    },
+    onDeviceReady: function () { },
 };
 
 app.initialize();
