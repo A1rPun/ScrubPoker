@@ -20,24 +20,22 @@
         </header>
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Scrum Poker</span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="#">Standard</a>
-                <a class="mdl-navigation__link" href="#">Fibonacci</a>
-                <a class="mdl-navigation__link" href="#">Natural</a>
-                <a class="mdl-navigation__link" href="#">T-Shirt</a>
+            <nav class="mdl-navigation" id="navigation-container">
+                <div v-for="deck in menu">
+                    <a class="mdl-navigation__link" href="#">{{ deck }}</a>
+                </div>
             </nav>
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
-                <div class="mdl-grid" id="cards-container"></div>
+                <div class="mdl-grid" id="cards-container">
+                    <div class="mdl-cell mdl-cell--4-col" v-for="deck in currentDeck">
+                        <div class="mdl-card mdl-shadow--2dp" v-html="deck" v-on:click="cardClick($event)"></div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
-    <script type="text/html" id="cards-template">
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="mdl-card mdl-shadow--2dp"></div>
-        </div>
-    </script>
     <script src="cordova.js"></script>
     <script src="js/material.min.js"></script>
     <script src="js/vue.min.js"></script>
