@@ -1,3 +1,5 @@
+var green = '#12A01B';
+var red = '#CC1C17';
 var scrubPoker = new Vue({
     el: '#ScrubPoker',
     created: function () {
@@ -7,7 +9,9 @@ var scrubPoker = new Vue({
     data: {
         egg: 0,
         eggValue: '&#129370;&#129370;&#129370;',
+        colors: [],
         currentCard: 0,
+        currentColor: green,
         currentDeck: [],
         decks: [{
             name: 'Standard',
@@ -35,17 +39,21 @@ var scrubPoker = new Vue({
         cardClick: function (event, card) {
             this.state = this.gameState.hide;
             this.currentCard = card;
+            this.currentColor = event.currentTarget.style.backgroundColor;
             event.stopPropagation();
         },
         chosenCardClick: function (event) {
             this.state = this.gameState.choose;
             this.currentCard = 0;
+            event.stopPropagation();
         },
         deckClick: function (event, deck) {
             this.setDeck(deck.deck);
+            event.stopPropagation();
         },
         setDeck: function (deck) {
             this.currentDeck = deck;
+            this.colors = Gradient.generate(green, red, deck.length);
         },
         tableClick: function () {
             if (this.state === this.gameState.hide) {

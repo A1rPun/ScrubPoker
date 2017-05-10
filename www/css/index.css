@@ -14,8 +14,8 @@ body {
     height: 256px;
     line-height: 256px;
     text-align: center;
-    font-size: 3em;
-    background: #4cff00;
+    font-size: 5em;
+    background: #12A01B;
     color: #000000;
     border-radius: 5px;
     cursor: pointer;
@@ -29,4 +29,10 @@ body {
     left: 16px;
     height: auto;
     width: auto;
+    line-height: normal;
+    font-size: 50vh;
+}
+
+.mdl-card__misccolor {
+    background: #CC1C17;
 }
