@@ -1,5 +1,7 @@
 ﻿# Multiplayer Scrum Poker
 
+![Screenshot](/screenie.png)
+
 ## Features
 
     ✓ Singleplayer UI
