@@ -5,8 +5,16 @@ body {
 }
 
 .mdl-layout__header {
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     color: #000000;
+}
+
+.mdl-navigation__active {
+    background: #000000;
+    color: #FFFFFF;
+}
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__active.mdl-navigation__link:hover {
+    background: #222222;
 }
 
 .mdl-card {

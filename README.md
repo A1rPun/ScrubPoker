@@ -9,7 +9,6 @@
 	✓ Menu
     ✓ Different decks
     ✓ Choose deck
-	  ⨉ Show current deck in menu
 	✓ Cool card colors
 	⨉ Slick themes
     ⨉ Custom deck
