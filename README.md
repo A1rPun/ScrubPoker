@@ -19,3 +19,7 @@
       ⨉ Algorithms: average card, ???
       ⨉ Multiplayer UI
     ✓ Easter egg
+
+## Credits
+Design by Thom Bakker
+Icon by Maxim Basinski
