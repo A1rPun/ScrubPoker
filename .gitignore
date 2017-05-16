@@ -5,3 +5,5 @@ plugins/*
 
 # files
 web.config
+compilerconfig.json
+www/css/index.min.css

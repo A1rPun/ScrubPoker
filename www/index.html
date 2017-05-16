@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/material.min.css">
-    <link rel="stylesheet" type="text/css" href="css/materialicons.css" />
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <title>ScrubPoker</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/material.min.css">
+  <link rel="stylesheet" type="text/css" href="css/materialicons.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>ScrubPoker</title>
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="ScrubPoker" v-on:click="tableClick($event)">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Scrum Poker</span>
-                <div class="mdl-layout-spacer"></div>
-                <span class="mdl-layout-title">{{ currentDeck.name }}</span>                
-            </div>
-        </header>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Scrum Poker</span>
-            <nav class="mdl-navigation">
-                <div v-for="deck in decks">
-                    <a href="#"
-                       v-bind:class="{ 'mdl-navigation__link': true, 'mdl-navigation__active': currentDeck === deck }"
-                       v-on:click="deckClick($event, deck)">{{ deck.name }}</a>
-                </div>
-                <a href="#" class="mdl-navigation__link">Multiplayer</a>
-            </nav>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="ScrubPoker" v-on:click="tableClick($event)">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Scrum Poker</span>
+        <div class="mdl-layout-spacer"></div>
+        <span class="mdl-layout-title">{{ currentDeck.name }}</span>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Scrum Poker</span>
+      <nav class="mdl-navigation">
+        <div v-for="deck in decks">
+          <a href="#"
+             v-bind:class="{ 'mdl-navigation__link': true, 'mdl-navigation__active': currentDeck === deck }"
+             v-on:click="deckClick($event, deck)">{{ deck.name }}</a>
         </div>
-        <main class="mdl-layout__content">
-            <div class="page-content">
-                <div class="mdl-grid"
-                     v-if="state === gameState.choose">
-                    <div class="mdl-cell mdl-cell--4-col"
-                         v-for="(card, index) in currentDeck.deck">
-                        <div class="mdl-card mdl-shadow--2dp"
-                             v-html="card"
-                             v-bind:style="{ backgroundColor: colors[index] }"
-                             v-on:click="cardClick($event, card)"></div>
-                    </div>
-                    <div class="mdl-cell mdl-cell--4-col"
-                         v-for="card in miscDeck">
-                        <div class="mdl-card mdl-card__misccolor mdl-shadow--2dp"
-                             v-html="card"
-                             v-on:click="cardClick($event, card)"></div>
-                    </div>                                                                                                                              <div class="mdl-cell mdl-cell--4-col" v-if="egg > magicValue"><div class="mdl-card mdl-shadow--2dp" v-html="eggValue" v-on:click="cardClick($event, eggValue)"></div></div>
-                </div>
-                <div class="mdl-card mdl-card__misccolor mdl-card__fullscreen"
-                     v-if="state === gameState.card"
-                     v-html="currentCard"
-                     v-bind:style="{ backgroundColor: currentColor }"
-                     v-on:click="chosenCardClick($event)"></div>
-            </div>
-        </main>
+        <a href="#" class="mdl-navigation__link">Multiplayer</a>
+      </nav>
     </div>
-    <script src="cordova.js"></script>
-    <script src="js/material.min.js"></script>
-    <script src="js/vue.min.js"></script>
-    <script src="js/gradient.js"></script>
-    <script src="js/index.js"></script>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="mdl-grid"
+             v-if="state === gameState.choose">
+          <div class="mdl-cell mdl-cell--4-col"
+               v-for="(card, index) in currentDeck.deck">
+            <div class="mdl-card mdl-shadow--2dp"
+                 v-html="card"
+                 v-bind:style="{ backgroundColor: colors[index] }"
+                 v-on:click="cardClick($event, card)"></div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col"
+               v-for="card in miscDeck">
+            <div class="mdl-card mdl-card__misccolor mdl-shadow--2dp"
+                 v-html="card"
+                 v-on:click="cardClick($event, card)"></div>
+          </div>                                                                                                                              <div class="mdl-cell mdl-cell--4-col" v-if="egg > magicValue"><div class="mdl-card mdl-shadow--2dp" v-html="eggValue" v-on:click="cardClick($event, eggValue)"></div></div>
+        </div>
+        <div class="mdl-card mdl-card__misccolor mdl-card__fullscreen"
+             v-if="state === gameState.card"
+             v-html="currentCard"
+             v-bind:style="{ backgroundColor: currentColor }"
+             v-on:click="chosenCardClick($event)"></div>
+      </div>
+    </main>
+  </div>
+  <script src="cordova.js"></script>
+  <script src="js/material.min.js"></script>
+  <script src="js/vue.min.js"></script>
+  <script src="js/gradient.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

@@ -1,34 +1,45 @@
-﻿html,
-body {
-  background: #000000;
+﻿@black: #000000;
+@dark-grey: #222222;
+@white: #FFFFFF;
+@green: #12A01B;
+@red: #CC1C17;
+@card-height: 128px;
+
+html, body {
+  background: @black;
   height: 100%;
   overflow-y: hidden;
   margin: 0;
   padding: 0;
 }
+
 .mdl-layout__header {
-  background: #222222;
-  color: #FFFFFF;
+  background: @dark-grey;
+  color: @white;
 }
+
 .mdl-navigation__active {
-  background: #000000;
-  color: #FFFFFF;
+  background: @black;
+  color: @white;
 }
+
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__active.mdl-navigation__link:hover {
-  background: #222222;
+  background: @dark-grey;
 }
+
 .mdl-card {
   width: 100%;
-  height: 128px;
-  min-height: 128px;
-  line-height: 128px;
+  height: @card-height;
+  min-height: @card-height;
+  line-height: @card-height;
   text-align: center;
   font-size: 5em;
-  background: #12A01B;
-  color: #000000;
+  background: @green;
+  color: @black;
   border-radius: 5px;
   cursor: pointer;
 }
+
 .mdl-card__fullscreen {
   position: absolute;
   top: 16px;
@@ -40,12 +51,14 @@ body {
   line-height: normal;
   font-size: 50vh;
 }
+
 .mdl-card__misccolor {
-  background: #CC1C17;
+  background: @red;
 }
+
 .mdl-cell--4-col,
 .mdl-cell--4-col-phone.mdl-cell--4-col-phone,
 .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
-  width: calc(33% - 16px);
-  height: 128px;
+  width: calc(~'33% - 16px');
+  height: @card-height;
 }
