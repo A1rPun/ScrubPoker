@@ -13,31 +13,38 @@ html, body {
   padding: 0;
 }
 
+// Material Design Lite overrides
 .mdl-layout__header {
   background: @dark-grey;
   color: @white;
+
+  .mdl-layout__drawer-button {
+    color: @white;
+  }
 }
 
-.mdl-navigation__active {
-  background: @black;
-  color: @white;
-}
+.mdl-layout__drawer .mdl-navigation {
+  .mdl-navigation__active {
+    background: @black;
+    color: @white;
+  }
 
-.mdl-layout__drawer .mdl-navigation .mdl-navigation__active.mdl-navigation__link:hover {
-  background: @dark-grey;
+  .mdl-navigation__active.mdl-navigation__link:hover {
+    background: @dark-grey;
+  }
 }
 
 .mdl-card {
-  width: 100%;
   height: @card-height;
   min-height: @card-height;
-  line-height: @card-height;
-  text-align: center;
-  font-size: 5em;
   background: @green;
   color: @black;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
 }
 
 .mdl-card__fullscreen {
@@ -48,8 +55,7 @@ html, body {
   left: 16px;
   height: auto;
   width: auto;
-  line-height: normal;
-  font-size: 50vh;
+  font-size: 40vw;
 }
 
 .mdl-card__misccolor {
@@ -59,6 +65,6 @@ html, body {
 .mdl-cell--4-col,
 .mdl-cell--4-col-phone.mdl-cell--4-col-phone,
 .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
-  width: calc(~'33% - 16px');
   height: @card-height;
+  width: calc(~'33% - 16px');
 }

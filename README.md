@@ -6,21 +6,27 @@
 
     ✓ Singleplayer UI
       ✓ Choose card
-	  ✓ Wait
-	  ✓ Show card
-	✓ Menu
+    	✓ Wait
+      ✓ Show card
+    ✓ Menu
     ✓ Different decks
     ✓ Choose deck
-	✓ Cool card colors
-	⨉ Slick themes
+    ✓ Cool card colors
+    ⨉ Settings UI
+      ⨉ Store customization settings
+      ⨉ Slick themes
     ⨉ Custom deck
+    ⨉ Sounds
     ⨉ Multiplayer
       ⨉ Server
       ⨉ Front-end connection to server
       ⨉ Algorithms: average card, ???
       ⨉ Multiplayer UI
-    ✓ Easter egg
+    ⨉ Cheevos
+      ⨉ fibonacci style cheevos for chosen card count
+      ⨉ Pick the same card twice, 3, 4 etc.
+      ⨉ ???
 
 ## Credits
-Design by Thom Bakker
+Project idea by @Gideonnn & @A1rPun  
 Icon by Maxim Basinski
