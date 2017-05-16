@@ -48,6 +48,10 @@
                  v-on:click="cardClick($event, card)"></div>
           </div>                                                                                                                              <div class="mdl-cell mdl-cell--4-col" v-if="egg > magicValue"><div class="mdl-card mdl-shadow--2dp" v-html="eggValue" v-on:click="cardClick($event, eggValue)"></div></div>
         </div>
+
+        <div class="mdl-card mdl-card__waiting"
+             v-if="state === gameState.hide"></div>
+
         <div class="mdl-card mdl-card__misccolor mdl-card__fullscreen"
              v-if="state === gameState.card"
              v-html="currentCard"

@@ -58,6 +58,20 @@ html, body {
   font-size: 40vw;
 }
 
+.mdl-card__waiting {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  bottom: 20%;
+  left: 20%;
+  height: auto;
+  width: auto;
+  pointer-events: none;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  animation: rainbow 18s ease infinite, wiggle 5s ease infinite;
+}
+
 .mdl-card__misccolor {
   background: @red;
 }
@@ -67,4 +81,40 @@ html, body {
 .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
   height: @card-height;
   width: calc(~'33% - 16px');
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+
+  50% {
+    background-position: 100% 19%;
+  }
+
+  100% {
+    background-position: 0% 82%;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
