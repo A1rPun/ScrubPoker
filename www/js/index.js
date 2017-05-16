@@ -25,6 +25,9 @@ var scrubPoker = new Vue({
     }, {
       name: 'T-Shirt',
       deck: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL']
+    }, {
+      name: 'Play Cards',
+      deck: ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
     }],
     gameState: {
       choose: 0,
