@@ -1,4 +1,4 @@
-﻿# Multiplayer Scrum Poker
+﻿# Multiplayer Planning Poker
 
 ![Screenshot](/screenie.png)
 
