@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/material.min.css">
   <link rel="stylesheet" type="text/css" href="css/materialicons.css" />
   <link rel="stylesheet" type="text/css" href="css/index.css">
-  <title>ScrubPoker</title>
+  <title>Planning Poker</title>
 </head>
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="ScrubPoker" v-on:click="tableClick($event)">
@@ -46,7 +46,7 @@
             <div class="mdl-card mdl-card__misccolor mdl-shadow--2dp"
                  v-html="card"
                  v-on:click="cardClick($event, card)"></div>
-          </div>                                                                                                                              <div class="mdl-cell mdl-cell--4-col" v-if="egg > magicValue"><div class="mdl-card mdl-shadow--2dp" v-html="eggValue" v-on:click="cardClick($event, eggValue)"></div></div>
+          </div>
         </div>
 
         <div class="mdl-card mdl-card__waiting"

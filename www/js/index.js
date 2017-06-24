@@ -7,8 +7,6 @@ var scrubPoker = new Vue({
     this.state = this.gameState.choose;
   },
   data: {
-    egg: 0,
-    eggValue: '&#129370;&#129370;&#129370;',
     colors: [],
     currentCard: 0,
     currentColor: green,
@@ -34,7 +32,6 @@ var scrubPoker = new Vue({
       hide: 1,
       card: 2,
     },
-    magicValue: 12,
     miscDeck: ['?', '&#8734;', '&#9749;'],
     state: 0,
   },
@@ -61,7 +58,7 @@ var scrubPoker = new Vue({
     tableClick: function () {
       if (this.state === this.gameState.hide) {
         this.state = this.gameState.card;
-      } else this.egg++;
+      }
     },
   },
 });
