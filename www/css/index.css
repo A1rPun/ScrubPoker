@@ -1,4 +1,4 @@
-﻿html,
+html,
 body {
   background: #000000;
   height: 100%;
@@ -52,8 +52,8 @@ body {
   width: auto;
   pointer-events: none;
   background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-  background-size: 1800% 1800%;
-  animation: rainbow 18s ease infinite, wiggle 5s ease infinite;
+  background-size: 1800% 100%;
+  animation: rainbow 18s linear infinite, wiggle 5s ease infinite;
 }
 .mdl-card__misccolor {
   background: #CC1C17;
@@ -66,13 +66,13 @@ body {
 }
 @keyframes rainbow {
   0% {
-    background-position: 0% 82%;
+    background-position: 0% 100%;
   }
   50% {
-    background-position: 100% 19%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 0% 82%;
+    background-position: 0% 100%;
   }
 }
 @keyframes wiggle {
